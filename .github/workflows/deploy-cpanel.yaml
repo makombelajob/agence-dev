@@ -36,5 +36,3 @@ jobs:
             **/*.map
             **/*:Zone.Identifier
           dry-run: false
-          verbose: true
-          timeout: 60000
