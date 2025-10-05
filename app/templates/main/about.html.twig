@@ -1,0 +1,388 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+<!-- Page Header -->
+<section class="section bg-light" style="padding-top: 120px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold text-primary mb-3" data-aos="fade-up">À propos de moi</h1>
+                <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
+                    Découvrez mon parcours, mes passions et ma vision du développement web
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Hero -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-hero-content">
+                    <h2 class="mb-4">Passionné par l'innovation technologique</h2>
+                    <p class="lead mb-4">
+                        Développeur web full-stack avec plus de 5 ans d'expérience, je me spécialise dans la création 
+                        d'applications web modernes et performantes. Mon expertise couvre tout le spectre du développement, 
+                        du frontend au backend, avec une spécialisation particulière en Symfony et React.js.
+                    </p>
+                    <p class="mb-4">
+                        J'ai commencé mon parcours dans le développement web par passion pour la technologie et l'innovation. 
+                        Aujourd'hui, je mets mes compétences au service de projets ambitieux, en créant des solutions 
+                        robustes et évolutives qui répondent aux besoins spécifiques de mes clients.
+                    </p>
+                    <div class="about-stats">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Années d'expérience</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Projets réalisés</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-hero-image">
+                    <div class="image-container">
+                        <div class="main-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-element element-1">
+                                <i class="fab fa-symfony"></i>
+                            </div>
+                            <div class="floating-element element-2">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="floating-element element-3">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <div class="floating-element element-4">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Journey Timeline -->
+<section class="section bg-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Mon parcours</h2>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2020 - Présent</div>
+                            <h5>Développeur Web Full-Stack Freelance</h5>
+                            <p>
+                                Développement d'applications web complètes pour des clients variés. 
+                                Spécialisation en Symfony et React.js avec une approche orientée performance et sécurité.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Symfony 7</li>
+                                <li>React.js</li>
+                                <li>API REST</li>
+                                <li>Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2019 - 2020</div>
+                            <h5>Développeur Backend Senior</h5>
+                            <p>
+                                Développement d'APIs complexes et optimisation de performances. 
+                                Formation de l'équipe aux bonnes pratiques Symfony et architecture microservices.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Symfony</li>
+                                <li>Doctrine ORM</li>
+                                <li>MySQL</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2018 - 2019</div>
+                            <h5>Développeur Frontend</h5>
+                            <p>
+                                Création d'interfaces utilisateur modernes et responsives. 
+                                Intégration d'APIs et développement de composants React.js réutilisables.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>React.js</li>
+                                <li>JavaScript ES6+</li>
+                                <li>CSS3</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2017 - 2018</div>
+                            <h5>Formation Développement Web</h5>
+                            <p>
+                                Formation intensive en développement web full-stack. 
+                                Apprentissage des technologies modernes et des bonnes pratiques de développement.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>HTML5/CSS3</li>
+                                <li>JavaScript</li>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values & Approach -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Mes valeurs et approche</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h5>Code de qualité</h5>
+                    <p>
+                        Je privilégie un code propre, documenté et maintenable, 
+                        en suivant les meilleures pratiques et les standards de l'industrie.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5>Collaboration</h5>
+                    <p>
+                        Je crois en la force du travail d'équipe et de la communication 
+                        transparente pour mener à bien les projets les plus ambitieux.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h5>Innovation</h5>
+                    <p>
+                        Je reste constamment à la pointe des technologies émergentes 
+                        pour proposer les solutions les plus modernes et efficaces.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Sécurité</h5>
+                    <p>
+                        La sécurité est au cœur de tous mes développements, 
+                        avec une attention particulière aux bonnes pratiques et aux tests.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5>Performance</h5>
+                    <p>
+                        J'optimise chaque application pour offrir des performances optimales 
+                        et une expérience utilisateur exceptionnelle.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h5>Formation continue</h5>
+                    <p>
+                        Je me forme continuellement aux nouvelles technologies et 
+                        partage mes connaissances avec la communauté développeur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies I Love -->
+<section class="section bg-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Technologies que j'adore</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">
+                    Voici les technologies avec lesquelles je travaille quotidiennement et que je recommande
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-symfony"></i>
+                    </div>
+                    <h5>Symfony</h5>
+                    <p>Mon framework PHP préféré pour sa robustesse et sa communauté active</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h5>React.js</h5>
+                    <p>Pour créer des interfaces utilisateur interactives et performantes</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h5>PHP 8+</h5>
+                    <p>Le langage backend que je maîtrise avec ses dernières évolutions</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h5>Docker</h5>
+                    <p>Pour containeriser et déployer facilement mes applications</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Ce que disent mes clients</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>
+                            "Un développeur exceptionnel qui a su comprendre nos besoins et livrer 
+                            une solution parfaitement adaptée. Je recommande vivement !"
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h6>Marie Dubois</h6>
+                            <span>CEO, StartupTech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>
+                            "Code de qualité, respect des délais et excellente communication. 
+                            Exactement ce qu'on cherchait pour notre projet e-commerce."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h6>Jean Martin</h6>
+                            <span>Directeur, E-Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>
+                            "Une expertise technique impressionnante et une approche très professionnelle. 
+                            Notre API n'a jamais été aussi performante !"
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h6>Sophie Leroy</h6>
+                            <span>CTO, DataCorp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="text-white mb-3">Prêt à collaborer ?</h2>
+                <p class="lead mb-0">
+                    Si mon profil vous intéresse et que vous avez un projet en tête, 
+                    n'hésitez pas à me contacter pour en discuter !
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ path('app_contact') }}" class="btn btn-light btn-custom me-3">
+                    <i class="fas fa-envelope me-2"></i>Me contacter
+                </a>
+                <a href="{{ path('app_projects') }}" class="btn btn-outline-light btn-custom">
+                    <i class="fas fa-folder me-2"></i>Mes projets
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

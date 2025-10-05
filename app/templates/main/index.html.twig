@@ -1,0 +1,343 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content" data-aos="fade-right">
+                    <div class="mb-3">
+                        <span class="badge bg-white text-primary px-3 py-2 rounded-pill">
+                            <i class="fas fa-code me-2"></i>Développeur Web Full-Stack
+                        </span>
+                    </div>
+                    <h1 class="hero-title">
+                        Salut, je suis <span class="text-warning">{{ developer_name }}</span>
+                    </h1>
+                    <h2 class="hero-subtitle">{{ developer_title }}</h2>
+                    <p class="hero-description">
+                        Passionné par le développement web, je me spécialise dans la création d'applications 
+                        modernes et performantes avec Symfony, React.js et les technologies les plus récentes. 
+                        Mon expertise couvre tout le spectre du développement web, du frontend au backend.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary-custom btn-custom me-3">
+                            <i class="fas fa-eye me-2"></i>Voir mes projets
+                        </a>
+                        <a href="#contact" class="btn btn-outline-custom btn-custom">
+                            <i class="fas fa-envelope me-2"></i>Me contacter
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                    <div class="position-relative">
+                        <!-- Code Animation -->
+                        <div class="code-container floating">
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <div class="code-buttons">
+                                        <span class="btn-close"></span>
+                                        <span class="btn-minimize"></span>
+                                        <span class="btn-maximize"></span>
+                                    </div>
+                                    <div class="code-title">
+                                        <i class="fab fa-symfony me-2"></i>portfolio.php
+                                    </div>
+                                </div>
+                                <div class="code-content">
+                                    <div class="code-line">
+                                        <span class="code-comment">// Développeur Web Full-Stack</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-keyword">class</span> 
+                                        <span class="code-class">Developer</span> 
+                                        <span class="code-bracket">{</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-space"></span>
+                                        <span class="code-keyword">private</span> 
+                                        <span class="code-variable">$skills</span> 
+                                        <span class="code-operator">=</span> 
+                                        <span class="code-bracket">[</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-space"></span>
+                                        <span class="code-space"></span>
+                                        <span class="code-string">'Symfony'</span>
+                                        <span class="code-operator">,</span>
+                                        <span class="code-string">'React.js'</span>
+                                        <span class="code-operator">,</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-space"></span>
+                                        <span class="code-space"></span>
+                                        <span class="code-string">'PHP'</span>
+                                        <span class="code-operator">,</span>
+                                        <span class="code-string">'JavaScript'</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-space"></span>
+                                        <span class="code-bracket">]</span><span class="code-operator">;</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-bracket">}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="floating-elements">
+                            <div class="floating-element element-1">
+                                <i class="fab fa-symfony"></i>
+                            </div>
+                            <div class="floating-element element-2">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="floating-element element-3">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <div class="floating-element element-4">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">À propos de moi</h2>
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-content">
+                    <h3 class="mb-4">Passionné par le développement web</h3>
+                    <p class="lead mb-4">
+                        Avec plus de 5 ans d'expérience dans le développement web, je me spécialise dans 
+                        la création d'applications robustes et évolutives utilisant les technologies les plus modernes.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-code text-primary mb-3"></i>
+                                <h5>Développement Full-Stack</h5>
+                                <p>Expert en développement frontend et backend avec une approche orientée performance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-item">
+                                <i class="fas fa-mobile-alt text-primary mb-3"></i>
+                                <h5>Responsive Design</h5>
+                                <p>Création d'interfaces adaptatives et optimisées pour tous les appareils.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-stats">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number text-primary">50+</div>
+                                <div class="stat-label">Projets réalisés</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number text-primary">5+</div>
+                                <div class="stat-label">Années d'expérience</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number text-primary">100%</div>
+                                <div class="stat-label">Satisfaction client</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="stat-item text-center">
+                                <div class="stat-number text-primary">24/7</div>
+                                <div class="stat-label">Support disponible</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Preview Section -->
+<section id="skills" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Mes compétences</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-item">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h5>Frontend</h5>
+                    <p>HTML5, CSS3, JavaScript, React.js, Bootstrap</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-item">
+                    <i class="fas fa-server skill-icon"></i>
+                    <h5>Backend</h5>
+                    <p>PHP, Symfony, MySQL, API REST, AJAX</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h5>Base de données</h5>
+                    <p>MySQL, MariaDB, Doctrine ORM</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-item">
+                    <i class="fas fa-tools skill-icon"></i>
+                    <h5>Outils</h5>
+                    <p>Git, Docker, Composer, NPM</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ path('app_skills') }}" class="btn btn-primary-custom btn-custom">
+                <i class="fas fa-list me-2"></i>Voir toutes les compétences
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Preview Section -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Mes projets récents</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="text-center">
+                                <a href="#" class="btn btn-light me-2">
+                                    <i class="fas fa-eye me-2"></i>Démo
+                                </a>
+                                <a href="#" class="btn btn-outline-light">
+                                    <i class="fab fa-github me-2"></i>Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">E-commerce Symfony</h5>
+                        <p class="card-text">Plateforme e-commerce complète avec gestion des commandes et paiements.</p>
+                        <div class="tech-tags">
+                            <span class="badge bg-primary">Symfony</span>
+                            <span class="badge bg-primary">PHP</span>
+                            <span class="badge bg-primary">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="text-center">
+                                <a href="#" class="btn btn-light me-2">
+                                    <i class="fas fa-eye me-2"></i>Démo
+                                </a>
+                                <a href="#" class="btn btn-outline-light">
+                                    <i class="fab fa-github me-2"></i>Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Application React.js</h5>
+                        <p class="card-text">Application web moderne avec React.js et API REST en temps réel.</p>
+                        <div class="tech-tags">
+                            <span class="badge bg-primary">React.js</span>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-primary">API REST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="text-center">
+                                <a href="#" class="btn btn-light me-2">
+                                    <i class="fas fa-eye me-2"></i>Démo
+                                </a>
+                                <a href="#" class="btn btn-outline-light">
+                                    <i class="fab fa-github me-2"></i>Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">API REST Symfony</h5>
+                        <p class="card-text">API RESTful complète avec authentification JWT et documentation Swagger.</p>
+                        <div class="tech-tags">
+                            <span class="badge bg-primary">Symfony</span>
+                            <span class="badge bg-primary">JWT</span>
+                            <span class="badge bg-primary">Swagger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ path('app_projects') }}" class="btn btn-primary-custom btn-custom">
+                <i class="fas fa-folder me-2"></i>Voir tous les projets
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section id="contact" class="section bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+                <h2 class="text-white mb-3">Prêt à collaborer ?</h2>
+                <p class="lead mb-0">
+                    Je suis toujours intéressé par de nouveaux projets et défis. 
+                    N'hésitez pas à me contacter pour discuter de votre projet !
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                <a href="{{ path('app_contact') }}" class="btn btn-light btn-custom">
+                    <i class="fas fa-envelope me-2"></i>Me contacter
+                </a>
+            </div>
+        </div>
+</div>
+</section>
+
+{% endblock %}
