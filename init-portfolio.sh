@@ -41,3 +41,4 @@ echo "   - Pour le développement, les emails sont capturés par MailHog"
 echo "   - Pour la production, configurez MAILER_DSN dans .env.local"
 echo ""
 echo "🎉 Votre portfolio est prêt !"
+

@@ -189,3 +189,4 @@ class ContactMessage
         return sprintf('%s - %s', $this->name, $this->subject);
     }
 }
+

@@ -116,3 +116,4 @@ class PortfolioFixtures extends Fixture
         $manager->flush();
     }
 }
+

@@ -538,7 +538,10 @@ function autoCloseNavbar() {
 // Appel de la fonction
 autoCloseNavbar();
 
+// ajout du style background
+
 
 // Exposer les utilitaires globalement
 window.AnimationUtils = AnimationUtils;
 window.Utils = Utils;
+

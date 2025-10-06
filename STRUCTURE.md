@@ -187,3 +187,4 @@ document.addEventListener('DOMContentLoaded', function() {
 ---
 
 *Cette organisation garantit un code maintenable, performant et évolutif.*
+

@@ -33,3 +33,4 @@ final class Version20241201000001 extends AbstractMigration
         $this->addSql('DROP TABLE skill');
     }
 }
+

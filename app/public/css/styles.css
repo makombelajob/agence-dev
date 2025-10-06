@@ -77,10 +77,29 @@ body {
 .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+/* particles styles */
+/* #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;  
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+body {
+  background: #ffffff; 
+} */
+
 
 /* Hero Section */
 .hero-section {
-    min-height: 100dvh;
+    /* min-height: 90dvh; */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     position: relative;
@@ -128,7 +147,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    min-height: 100dvh;
+    /* min-height: 100dvh; */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
@@ -256,6 +275,7 @@ body {
 }
 
 /* Skills Section */
+
 .skill-item {
     background: white;
     border-radius: 15px;
@@ -397,7 +417,7 @@ body {
     }
     
     .hero-visual {
-        height: 400px;
+        height: 700px;
     }
     .hero-title {
         font-size: 2.5rem;

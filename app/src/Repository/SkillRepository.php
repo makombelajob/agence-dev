@@ -81,3 +81,4 @@ class SkillRepository extends ServiceEntityRepository
         return $grouped;
     }
 }
+

@@ -81,3 +81,4 @@ class ContactMessageRepository extends ServiceEntityRepository
             ->getResult();
     }
 }
+
