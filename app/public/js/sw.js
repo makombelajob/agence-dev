@@ -22,3 +22,22 @@ self.addEventListener('fetch', event => {
         })
     );
 });
+/**
+ * Ferme automatiquement la navbar Bootstrap après un clic sur un lien
+ */
+// function autoCloseNavbar() {
+//     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+//     const navbarCollapse = document.querySelector('.navbar-collapse');
+
+//     if (!navbarCollapse || navLinks.length === 0) return;
+
+//     navLinks.forEach(link => {
+//         link.addEventListener('click', () => {
+//             const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+//             bsCollapse.hide(); // Ferme le menu
+//         });
+//     });
+// }
+
+// Appel de la fonction
+// autoCloseNavbar();

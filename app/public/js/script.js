@@ -77,7 +77,17 @@ function initNavbarEffects() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
-    window.addEventListener('scroll', function() {
+    // Appliquer le style dès le chargement
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+
+    // Ensuite, écouter le scroll
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -87,6 +97,7 @@ function initNavbarEffects() {
         }
     });
 }
+
 
 /**
  * Initialise les animations AOS
@@ -505,6 +516,28 @@ const Utils = {
         );
     }
 };
+/**
+ * Ferme automatiquement la navbar Bootstrap après un clic sur un lien
+ */
+function autoCloseNavbar() {
+    const navbarCollapseEl = document.getElementById('navbarNav');
+    if (!navbarCollapseEl) return;
+
+    const navLinks = navbarCollapseEl.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapseEl.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl)
+                    || new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+                bsCollapse.hide();
+            }
+        });
+    });
+}
+
+// Appel de la fonction
+autoCloseNavbar();
+
 
 // Exposer les utilitaires globalement
 window.AnimationUtils = AnimationUtils;
