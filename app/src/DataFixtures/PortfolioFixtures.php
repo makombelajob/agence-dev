@@ -31,6 +31,7 @@ class PortfolioFixtures extends Fixture
             ['name' => 'Git', 'icon' => 'fab fa-git-alt', 'level' => 85, 'color' => '#f05032', 'category' => 'Tools'],
             ['name' => 'Docker', 'icon' => 'fab fa-docker', 'level' => 75, 'color' => '#2496ed', 'category' => 'Tools'],
             ['name' => 'Linux', 'icon' => 'fab fa-linux', 'level' => 80, 'color' => '#fcc624', 'category' => 'Tools'],
+            ['name' => 'Windows', 'icon' => 'fa-brands fa-windows', 'level' => 70, 'color' => '#3155b8ff', 'category' => 'Tools'],
             ['name' => 'Composer', 'icon' => 'fas fa-box', 'level' => 90, 'color' => '#885630', 'category' => 'Tools'],
             ['name' => 'NPM', 'icon' => 'fab fa-npm', 'level' => 78, 'color' => '#cb3837', 'category' => 'Tools'],
         ];
