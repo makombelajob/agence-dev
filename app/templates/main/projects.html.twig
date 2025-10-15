@@ -50,7 +50,7 @@
         <div class="row" id="projects-grid">
             {% for project in projects %}
             <div class="col-lg-4 col-md-6 mb-4 project-item" 
-                 data-category="{% if project.featured %}featured{% endif %} {{ project.technologies|join(' ')|lower|replace({' ': '-'}) }}"
+                data-category=""
                  data-aos="fade-up" 
                  data-aos-delay="{{ loop.index * 100 }}">
                 <div class="project-card h-100">

@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==================== PARTICLE EFFECTS ====================
     initParticleEffects();
 
-    initProjectFilters();
 });
 
 /**
@@ -51,38 +50,37 @@ function initProjectFilters() {
 
     if (filterButtons.length === 0 || projectItems.length === 0) return;
 
-    // Fonction pour appliquer le filtre
     const applyFilter = (filter) => {
         projectItems.forEach(item => {
-            const categories = item.dataset.category.split(' ');
+            const raw = item.dataset.category || '';
+            // découpe sur espaces (filenames homogènes : "featured react api symfony ")
+            const categories = raw.trim().split(/\s+/).filter(Boolean);
 
             if (filter === 'all' || categories.includes(filter)) {
-                item.classList.remove('hidden');
-                item.classList.add('visible');
+                item.classList.remove('d-none');
             } else {
-                item.classList.add('hidden');
-                item.classList.remove('visible');
+                item.classList.add('d-none');
             }
         });
     };
 
-    // Ajouter les événements de clic aux boutons
     filterButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // Supprimer la classe active de tous les boutons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Ajouter la classe active au bouton cliqué
             this.classList.add('active');
 
-            // Appliquer le filtre
             const filter = this.dataset.filter;
             applyFilter(filter);
         });
     });
 
-    // Initialiser l'état visible
+    // état initial
     applyFilter('all');
 }
+
+// initialiser quand DOM prêt
+document.addEventListener('DOMContentLoaded', initProjectFilters);
+
 
 // Appeler la fonction après le chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {

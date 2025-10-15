@@ -316,13 +316,13 @@ body {
 .project-card:hover .project-overlay {
     opacity: 1;
 }
-/* .hidden {
+.hidden {
     display: none;
 }
 
 .visible {
     display: block;
-} */
+}
 
 /* Contact Section */
 .contact-section {

@@ -91,6 +91,41 @@ final class MainController extends AbstractController
         'projects' => $projects,
     ]);
     }
+    // #[Route('/projects', name: 'app_projects')]
+    // public function projects(ProjectRepository $projectRepository): Response
+    // {
+    //     $projectsEntities = $projectRepository->findAll();
+
+    //     $projects = [];
+    //     foreach ($projectsEntities as $project) {
+    //         $techs = $project->getTechnologies();
+
+    //         // Si c'est une chaîne "React.js, Symfony", on convertit en tableau propre
+    //         if (is_string($techs)) {
+    //             $techs = array_map('trim', explode(',', $techs));
+    //         }
+    //         // Si c'est JSON décodé ou déjà un tableau, on garde tel quel.
+
+    //         $projects[] = [
+    //             'title' => $project->getTitle(),
+    //             'description' => $project->getDescription(),
+    //             'technologies' => $techs, // garante d'un tableau propre
+    //             'image' => $project->getImage(),
+    //             'demo_url' => $project->getDemoUrl(),
+    //             'github_url' => $project->getGithubUrl(),
+    //             'featured' => $project->isFeatured(),
+    //         ];
+    //     }
+
+    //     // debug rapide si tu veux :
+    //     // dd($projects);
+
+    //     return $this->render('main/projects.html.twig', [
+    //         'page_title' => 'Projets - Portfolio Développeur',
+    //         'projects' => $projects,
+    //     ]);
+    // }
+
 
     #[Route('/contact', name: 'app_contact')]
     public function contact(Request $request, ContactService $contactService): Response
