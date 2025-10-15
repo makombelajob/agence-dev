@@ -2,7 +2,7 @@ services:
   php:
     build: # Fabrique une image à partir d'un Dockerfile
       context: ./php # context = endroit où se trouve Dockerfile pour PHP
-    container_name: php_agence_web
+    container_name: php_agence_dev
     ports:
       - 8080:80 # 8080 port externe, 80 port dans l'image (EXPOSE 80)
     volumes:
@@ -10,10 +10,10 @@ services:
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
   database:
     image: mysql:8.0
-    container_name: mysql_agence_web
+    container_name: mysql_agence_dev
     environment:
       MYSQL_ROOT_PASSWORD: admin77911 # paramètre obligatoire, mot de passe d'administration de mysql
-      MYSQL_DATABASE: agence_web
+      MYSQL_DATABASE: agence_dev
       MYSQL_USER: admin # On met ce qu'on veut
       MYSQL_PASSWORD: admin7791 # On met ce qu'on veut
     volumes:
@@ -21,7 +21,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmin_agence_web
+    container_name: phpmyadmin_agence_dev
     environment:
       PMA_HOST: database # Nom du service de base de données
       PMA_USER: root
@@ -33,6 +33,6 @@ services:
 
   mailhog:
     image: mailhog/mailhog
-    container_name: mailhog_agence_web
+    container_name: mailhog_agence_dev
     ports:
       - 8025:8025
