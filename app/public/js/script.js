@@ -35,8 +35,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ==================== PARTICLE EFFECTS ====================
     initParticleEffects();
+
+    initProjectFilters();
 });
 
+/**
+ * Filtre des projet
+ */
+/**
+ * Fonction pour initialiser les filtres de projets
+ */
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (filterButtons.length === 0 || projectItems.length === 0) return;
+
+    // Fonction pour appliquer le filtre
+    const applyFilter = (filter) => {
+        projectItems.forEach(item => {
+            const categories = item.dataset.category.split(' ');
+
+            if (filter === 'all' || categories.includes(filter)) {
+                item.classList.remove('hidden');
+                item.classList.add('visible');
+            } else {
+                item.classList.add('hidden');
+                item.classList.remove('visible');
+            }
+        });
+    };
+
+    // Ajouter les événements de clic aux boutons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Supprimer la classe active de tous les boutons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Ajouter la classe active au bouton cliqué
+            this.classList.add('active');
+
+            // Appliquer le filtre
+            const filter = this.dataset.filter;
+            applyFilter(filter);
+        });
+    });
+
+    // Initialiser l'état visible
+    applyFilter('all');
+}
+
+// Appeler la fonction après le chargement du DOM
+document.addEventListener('DOMContentLoaded', () => {
+    initProjectFilters();
+});
 /**
  * Initialise l'écran de chargement
  */

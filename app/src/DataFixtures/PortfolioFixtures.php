@@ -54,6 +54,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'Ent-facile',
                 'description' => 'Une application web moderne construite avec symfony-php, qui est un Espace Numérique de Travail facile à utilisé et optimiser. ',
                 'technologies' => ['Symfony', 'PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+                'githubUrl' => 'https://github.com/makombelajob/easy-ent-app' ,
+                'demoUrl' =>  'https://ent-facile.fr',
                 'category' => 'Symfony',
                 'featured' => true,
                 'sortOrder' => 1,
@@ -62,6 +64,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'E-school',
                 'description' => 'Une plateforme de vente de cours en ligne développer pendant ma formation avec deux des mes camarades.',
                 'technologies' => ['React.js', 'JavaScript', 'API REST', 'Bootstrap'],
+                'githubUrl' => 'https://github.com/makombelajob/e-school_symfony',
+                'demoUrl' =>  'https://e-school.jobmakombela.fr/',
                 'category' => 'React',
                 'featured' => true,
                 'sortOrder' => 2,
@@ -70,6 +74,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'Web-test',
                 'description' => 'Une plateforme dediée aux admistrateurs et Développeur pour tester les différentes vulnérabilités possible.',
                 'technologies' => ['Symfony', 'PHP', 'JWT', 'Swagger', 'MySQL'],
+                'githubUrl' => 'https://github.com/makombelajob/web-test',
+                'demoUrl' =>  'https://web-test.jobmakombela.fr/',
                 'category' => 'API',
                 'featured' => false,
                 'sortOrder' => 3,
@@ -78,6 +84,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'Pennar-bed',
                 'description' => 'Une société qui aides les jeûnes étudiants d\'origine différentes dans l\'intégration sociales et les procédures administratives. ',
                 'technologies' => ['Symfony', 'PHP', 'AJAX', 'Chart.js', 'Bootstrap'],
+                'githubUrl' => 'https://github.com/makombelajob/penn-ar-bed',
+                'demoUrl' =>  'https://pennar-bed.fr/',
                 'category' => 'Symfony',
                 'featured' => false,
                 'sortOrder' => 4,
@@ -86,6 +94,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'My blog',
                 'description' => 'Un dediée aux tutoriels des solutions de certains bug et certaines démonstration de test de pénétration dans un environement 100% isolé. ',
                 'technologies' => ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+                'githubUrl' => null,
+                'demoUrl' =>  'https://my-blog.jobmakombela.fr/',
                 'category' => 'Frontend',
                 'featured' => false,
                 'sortOrder' => 5,
@@ -94,6 +104,8 @@ class PortfolioFixtures extends Fixture
                 'title' => 'Gourmetech',
                 'description' => 'Un site qui propose des fomrules des plats spéciales. ',
                 'technologies' => ['React.js', 'PWA', 'Service Workers', 'JavaScript'],
+                'githubUrl' => 'https://github.com/makombelajob/gourmeTech',
+                'demoUrl' =>  'https://gourm-tech.jobmakombela.fr/',
                 'category' => 'React',
                 'featured' => false,
                 'sortOrder' => 6,
@@ -109,8 +121,8 @@ class PortfolioFixtures extends Fixture
             $project->setFeatured($projectData['featured']);
             $project->setSortOrder($projectData['sortOrder']);
             $project->setActive(true);
-            $project->setDemoUrl('#');
-            $project->setGithubUrl('#');
+            $project->setDemoUrl($projectData['demoUrl']);
+            $project->setGithubUrl($projectData['githubUrl']);
             $manager->persist($project);
         }
 

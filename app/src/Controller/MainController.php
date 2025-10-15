@@ -13,13 +13,28 @@ use App\Service\ContactService;
 final class MainController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
+        $projectsEntities = $projectRepository->findAll();
+
+        $projects = [];
+        foreach ($projectsEntities as $project) {
+            $projects[] = [
+                'title' => $project->getTitle(),
+                'description' => $project->getDescription(),
+                'technologies' => $project->getTechnologies(), // array ou JSON décodé
+                'image' => $project->getImage(),
+                'demo_url' => $project->getDemoUrl(),
+                'github_url' => $project->getGithubUrl(),
+                'featured' => $project->isFeatured(),
+            ];
+        }
         return $this->render('main/index.html.twig', [
             'page_title' => 'Portfolio Développeur Web - Symfony Expert',
             'developer_name' => 'Job Makombela',
             'developer_title' => 'Développeur Web Full-Stack',
             'developer_specialty' => 'Spécialisé Symfony & React.js',
+            'projects' => $projects,
         ]);
     }
 

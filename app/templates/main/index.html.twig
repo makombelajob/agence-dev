@@ -415,6 +415,93 @@
         </div>
     </div>
 </section>
+{# <section class="section">
+	<div class="container">
+		<div class="row" id="projects-grid">
+			{% for project in projects %}
+				<div class="col-lg-4 col-md-6 mb-4 project-item" data-category="{% if project.featured %}featured{% endif %} {{ project.technologies|join(' ')|lower|replace({' ': '-'}) }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+					<div class="project-card h-100">
+						<div class="project-image">
+							<div class="project-overlay">
+								<div class="project-actions">
+									<a href="{{ project.demo_url }}" class="btn btn-light btn-sm me-2" target="_blank">
+										<i class="fas fa-external-link-alt me-1"></i>Démo
+									</a>
+									<a href="{{ project.github_url }}" class="btn btn-outline-light btn-sm" target="_blank">
+										<i class="fab fa-github me-1"></i>Code
+									</a>
+								</div>
+							</div>
+							{% if project.featured %}
+								<div class="featured-badge">
+									<i class="fas fa-star"></i>
+								</div>
+							{% endif %}
+							<div class="project-preview">
+								<i class="fas fa-code"></i>
+							</div>
+						</div>
+						<div class="project-content">
+							<div class="project-header">
+								<h5 class="project-title">{{ project.title }}</h5>
+								{% if project.featured %}
+									<span class="project-badge">Projet phare</span>
+								{% endif %}
+							</div>
+							<p class="project-description">{{ project.description }}</p>
+							<div class="project-technologies">
+								{% for tech in project.technologies %}
+									<span class="tech-tag tech-{{ tech|lower|replace({' ': '-'}) }}">
+										{% if tech == 'Symfony' %}
+											<i class="fab fa-symfony me-1"></i>
+										{% elseif tech == 'React.js' %}
+											<i class="fab fa-react me-1"></i>
+										{% elseif tech == 'PHP' %}
+											<i class="fab fa-php me-1"></i>
+										{% elseif tech == 'JavaScript' %}
+											<i class="fab fa-js-square me-1"></i>
+										{% elseif tech == 'MySQL' %}
+											<i class="fas fa-database me-1"></i>
+										{% elseif tech == 'Bootstrap' %}
+											<i class="fab fa-bootstrap me-1"></i>
+										{% elseif tech == 'API REST' %}
+											<i class="fas fa-plug me-1"></i>
+										{% elseif tech == 'AJAX' %}
+											<i class="fas fa-exchange-alt me-1"></i>
+										{% elseif tech == 'JWT' %}
+											<i class="fas fa-key me-1"></i>
+										{% elseif tech == 'Swagger' %}
+											<i class="fas fa-book me-1"></i>
+										{% elseif tech == 'Chart.js' %}
+											<i class="fas fa-chart-bar me-1"></i>
+										{% elseif tech == 'PWA' %}
+											<i class="fas fa-mobile-alt me-1"></i>
+										{% elseif tech == 'Service Workers' %}
+											<i class="fas fa-cogs me-1"></i>
+										{% endif %}
+										{{ tech }}
+									</span>
+								{% endfor %}
+							</div>
+							<div class="project-footer">
+								<div class="project-links">
+									<a href="{{ project.demo_url }}" class="project-link" target="_blank">
+										<i class="fas fa-external-link-alt"></i>
+										<span>Voir le projet</span>
+									</a>
+									<a href="{{ project.github_url }}" class="project-link" target="_blank">
+										<i class="fab fa-github"></i>
+										<span>Code source</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section> #}
 
 <!-- Contact CTA Section -->
 <section id="contact" class="section bg-primary text-white">
