@@ -26,10 +26,10 @@ class ContactMessage
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
-    #[ORM\Column]
+    #[ORM\Column(name: 'is_read')]
     private ?bool $read = false;
 
-    #[ORM\Column]
+    #[ORM\Column(name: 'is_replied')]
     private ?bool $replied = false;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -189,4 +189,3 @@ class ContactMessage
         return sprintf('%s - %s', $this->name, $this->subject);
     }
 }
-

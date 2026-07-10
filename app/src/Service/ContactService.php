@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\ContactMessage;
 use Doctrine\ORM\EntityManagerInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,9 +14,9 @@ class ContactService
     public function __construct(
         private EntityManagerInterface $entityManager,
         private MailerInterface $mailer,
+        private LoggerInterface $logger,
         private string $adminEmail = 'contact@votreportfolio.com'
-    ) {
-    }
+    ) {}
 
     public function handleContactForm(array $data, Request $request): array
     {
@@ -30,7 +31,7 @@ class ContactService
 
             // Création du message
             $contactMessage = $this->createContactMessage($data, $request);
-            
+
             // Sauvegarde en base de données
             $this->entityManager->persist($contactMessage);
             $this->entityManager->flush();
@@ -39,13 +40,17 @@ class ContactService
             $this->sendContactEmail($contactMessage);
 
             $result = [
-                'success' => true, 
+                'success' => true,
                 'message' => 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
             ];
-
         } catch (\Exception $e) {
+            $this->logger->error('Erreur lors de l\'envoi du formulaire de contact', [
+                'exception' => $e,
+                'email' => $data['email'] ?? null,
+            ]);
+
             $result = [
-                'success' => false, 
+                'success' => false,
                 'message' => 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.'
             ];
         }
@@ -56,7 +61,7 @@ class ContactService
     private function validateContactData(array $data): array
     {
         $requiredFields = ['name', 'email', 'subject', 'message'];
-        
+
         foreach ($requiredFields as $field) {
             if (empty($data[$field])) {
                 return ['valid' => false, 'message' => 'Tous les champs sont requis.'];
@@ -226,4 +231,3 @@ class ContactService
         ";
     }
 }
-
