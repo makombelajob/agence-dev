@@ -15,18 +15,21 @@ class ContactService
         private EntityManagerInterface $entityManager,
         private MailerInterface $mailer,
         private LoggerInterface $logger,
-        private string $adminEmail = 'contact@votreportfolio.com'
+        private string $adminEmail = 'contact@jobmakombela.fr'
     ) {}
 
     public function handleContactForm(array $data, Request $request): array
     {
-        $result = ['success' => false, 'message' => ''];
+        #$result = ['success' => false, 'message' => ''];
 
         try {
-            // Validation des données
+            // Validation
             $validation = $this->validateContactData($data);
             if (!$validation['valid']) {
-                return ['success' => false, 'message' => $validation['message']];
+                return [
+                    'success' => false,
+                    'message' => $validation['message']
+                ];
             }
 
             // Création du message
@@ -37,21 +40,22 @@ class ContactService
             $this->entityManager->flush();
 
             // Envoi de l'email
-            $this->sendContactEmail($contactMessage);
+            #$this->sendContactEmail($contactMessage);
 
             $result = [
                 'success' => true,
                 'message' => 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
             ];
         } catch (\Exception $e) {
-            $this->logger->error('Erreur lors de l\'envoi du formulaire de contact', [
+            /* $this->logger->error('Erreur lors de l\'envoi du formulaire de contact', [
                 'exception' => $e,
                 'email' => $data['email'] ?? null,
-            ]);
+            ]); */
+            $this->logger->error($e->getMessage());
 
             $result = [
                 'success' => false,
-                'message' => 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.'
+                'message' => $e->getMessage()
             ];
         }
 
