@@ -4,96 +4,48 @@
  */
 
 // Attendre que le DOM soit chargé
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // ==================== LOADING SCREEN ====================
     initLoadingScreen();
-    
+
     // ==================== SMOOTH SCROLLING ====================
     initSmoothScrolling();
-    
+
     // ==================== NAVBAR EFFECTS ====================
     initNavbarEffects();
-    
+
     // ==================== AOS ANIMATIONS ====================
     initAOSAnimations();
-    
+
     // ==================== SCROLL ANIMATIONS ====================
     initScrollAnimations();
-    
+
     // ==================== SKILL BARS ANIMATION ====================
     initSkillBars();
-    
+
     // ==================== PROJECT FILTERS ====================
     initProjectFilters();
-    
+
     // ==================== CONTACT FORM ====================
     initContactForm();
-    
+
     // ==================== TYPING ANIMATION ====================
     initTypingAnimation();
-    
+
     // ==================== PARTICLE EFFECTS ====================
     initParticleEffects();
 
 });
 
 /**
- * Filtre des projet
- */
-/**
- * Fonction pour initialiser les filtres de projets
- */
-function initProjectFilters() {
-    const filterButtons = document.querySelectorAll('.btn-filter');
-    const projectItems = document.querySelectorAll('.project-item');
-
-    if (filterButtons.length === 0 || projectItems.length === 0) return;
-
-    const applyFilter = (filter) => {
-        projectItems.forEach(item => {
-            const raw = item.dataset.category || '';
-            // découpe sur espaces (filenames homogènes : "featured react api symfony ")
-            const categories = raw.trim().split(/\s+/).filter(Boolean);
-
-            if (filter === 'all' || categories.includes(filter)) {
-                item.classList.remove('d-none');
-            } else {
-                item.classList.add('d-none');
-            }
-        });
-    };
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            const filter = this.dataset.filter;
-            applyFilter(filter);
-        });
-    });
-
-    // état initial
-    applyFilter('all');
-}
-
-// initialiser quand DOM prêt
-document.addEventListener('DOMContentLoaded', initProjectFilters);
-
-
-// Appeler la fonction après le chargement du DOM
-document.addEventListener('DOMContentLoaded', () => {
-    initProjectFilters();
-});
-/**
  * Initialise l'écran de chargement
  */
 function initLoadingScreen() {
     const loading = document.getElementById('loading');
     if (loading) {
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 loading.classList.add('hidden');
             }, 1000);
         });
@@ -171,7 +123,7 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -188,7 +140,7 @@ function initScrollAnimations() {
  * Initialise l'animation des barres de compétences
  */
 function initSkillBars() {
-    const progressObserver = new IntersectionObserver(function(entries) {
+    const progressObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const progressBar = entry.target;
@@ -219,37 +171,30 @@ function initProjectFilters() {
 
     if (filterButtons.length === 0 || projectItems.length === 0) return;
 
+    const applyFilter = (filter) => {
+        projectItems.forEach(item => {
+            const raw = (item.dataset.category || '').toLowerCase();
+            const categories = raw.trim().split(/\s+/).filter(Boolean);
+
+            if (filter === 'all' || categories.includes(filter)) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    };
+
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
+        button.addEventListener('click', function () {
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
 
             const filter = this.dataset.filter;
-
-            projectItems.forEach(item => {
-                if (filter === 'all') {
-                    item.classList.remove('hidden');
-                    item.classList.add('visible');
-                } else {
-                    const categories = item.dataset.category.split(' ');
-                    if (categories.includes(filter)) {
-                        item.classList.remove('hidden');
-                        item.classList.add('visible');
-                    } else {
-                        item.classList.add('hidden');
-                        item.classList.remove('visible');
-                    }
-                }
-            });
+            applyFilter(filter);
         });
     });
 
-    // Initialize visible state
-    projectItems.forEach(item => {
-        item.classList.add('visible');
-    });
+    applyFilter('all');
 }
 
 /**
@@ -260,8 +205,8 @@ function initContactForm() {
     if (!form) return;
 
     const submitButton = form.querySelector('button[type="submit"]');
-    
-    form.addEventListener('submit', function(e) {
+
+    form.addEventListener('submit', function (e) {
         // Add loading state to button
         if (submitButton) {
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Envoi en cours...';
@@ -272,11 +217,11 @@ function initContactForm() {
     // Real-time validation
     const inputs = form.querySelectorAll('input, textarea, select');
     inputs.forEach(input => {
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
             validateField(this);
         });
-        
-        input.addEventListener('input', function() {
+
+        input.addEventListener('input', function () {
             if (this.classList.contains('is-invalid')) {
                 validateField(this);
             }
@@ -290,15 +235,15 @@ function initContactForm() {
 function validateField(field) {
     const value = field.value.trim();
     let isValid = true;
-    
+
     // Remove previous validation classes
     field.classList.remove('is-valid', 'is-invalid');
-    
+
     // Check if required field is empty
     if (field.hasAttribute('required') && !value) {
         isValid = false;
     }
-    
+
     // Email validation
     if (field.type === 'email' && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -306,12 +251,12 @@ function validateField(field) {
             isValid = false;
         }
     }
-    
+
     // Message length validation
     if (field.name === 'message' && value && value.length < 10) {
         isValid = false;
     }
-    
+
     // Add validation class
     if (value) {
         field.classList.add(isValid ? 'is-valid' : 'is-invalid');
@@ -323,12 +268,12 @@ function validateField(field) {
  */
 function initTypingAnimation() {
     const typingElements = document.querySelectorAll('[data-typing]');
-    
+
     typingElements.forEach(element => {
         const text = element.textContent;
         const speed = element.dataset.speed || 100;
         element.textContent = '';
-        
+
         let i = 0;
         function typeWriter() {
             if (i < text.length) {
@@ -337,9 +282,9 @@ function initTypingAnimation() {
                 setTimeout(typeWriter, speed);
             }
         }
-        
+
         // Start typing when element is visible
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(typeWriter, 500);
@@ -347,7 +292,7 @@ function initTypingAnimation() {
                 }
             });
         });
-        
+
         observer.observe(element);
     });
 }
@@ -382,9 +327,9 @@ function createParticle(container) {
         left: ${Math.random() * 100}%;
         animation-delay: ${Math.random() * 8}s;
     `;
-    
+
     container.appendChild(particle);
-    
+
     // Remove particle after animation
     setTimeout(() => {
         if (particle.parentNode) {
@@ -400,46 +345,46 @@ const AnimationUtils = {
     /**
      * Anime un élément vers une position
      */
-    animateTo: function(element, target, duration = 300) {
+    animateTo: function (element, target, duration = 300) {
         return new Promise(resolve => {
             element.style.transition = `all ${duration}ms ease`;
             element.style.transform = target;
             setTimeout(resolve, duration);
         });
     },
-    
+
     /**
      * Fait apparaître un élément
      */
-    fadeIn: function(element, duration = 300) {
+    fadeIn: function (element, duration = 300) {
         element.style.opacity = '0';
         element.style.display = 'block';
-        
+
         let opacity = 0;
         const increment = 16 / duration; // 60fps
-        
+
         const timer = setInterval(() => {
             opacity += increment;
             element.style.opacity = opacity;
-            
+
             if (opacity >= 1) {
                 clearInterval(timer);
                 element.style.opacity = '1';
             }
         }, 16);
     },
-    
+
     /**
      * Fait disparaître un élément
      */
-    fadeOut: function(element, duration = 300) {
+    fadeOut: function (element, duration = 300) {
         let opacity = 1;
         const decrement = 16 / duration;
-        
+
         const timer = setInterval(() => {
             opacity -= decrement;
             element.style.opacity = opacity;
-            
+
             if (opacity <= 0) {
                 clearInterval(timer);
                 element.style.display = 'none';
@@ -451,7 +396,7 @@ const AnimationUtils = {
 /**
  * Gestionnaire d'erreurs global
  */
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('Erreur JavaScript:', e.error);
 });
 
@@ -459,7 +404,7 @@ window.addEventListener('error', function(e) {
  * Gestionnaire pour les performances
  */
 if ('performance' in window) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         const perfData = performance.getEntriesByType('navigation')[0];
         console.log('Temps de chargement:', perfData.loadEventEnd - perfData.loadEventStart + 'ms');
     });
@@ -469,12 +414,12 @@ if ('performance' in window) {
  * Service Worker pour le cache (PWA)
  */
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
+            .then(function (registration) {
                 console.log('Service Worker enregistré:', registration);
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log('Erreur Service Worker:', error);
             });
     });
@@ -524,7 +469,7 @@ const Utils = {
     /**
      * Débounce une fonction
      */
-    debounce: function(func, wait) {
+    debounce: function (func, wait) {
         let timeout;
         return function executedFunction(...args) {
             const later = () => {
@@ -535,13 +480,13 @@ const Utils = {
             timeout = setTimeout(later, wait);
         };
     },
-    
+
     /**
      * Throttle une fonction
      */
-    throttle: function(func, limit) {
+    throttle: function (func, limit) {
         let inThrottle;
-        return function() {
+        return function () {
             const args = arguments;
             const context = this;
             if (!inThrottle) {
@@ -551,11 +496,11 @@ const Utils = {
             }
         };
     },
-    
+
     /**
      * Vérifie si un élément est visible
      */
-    isElementVisible: function(element) {
+    isElementVisible: function (element) {
         const rect = element.getBoundingClientRect();
         return (
             rect.top >= 0 &&

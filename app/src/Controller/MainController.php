@@ -22,7 +22,8 @@ final class MainController extends AbstractController
             $projects[] = [
                 'title' => $project->getTitle(),
                 'description' => $project->getDescription(),
-                'technologies' => $project->getTechnologies(), // array ou JSON décodé
+                'technologies' => $project->getTechnologiesArray(),
+                'category' => $project->getCategory() ? strtolower($project->getCategory()) : '',
                 'image' => $project->getImage(),
                 'demo_url' => $project->getDemoUrl(),
                 'github_url' => $project->getGithubUrl(),
@@ -78,7 +79,8 @@ final class MainController extends AbstractController
             $projects[] = [
                 'title' => $project->getTitle(),
                 'description' => $project->getDescription(),
-                'technologies' => $project->getTechnologies(), // array ou JSON décodé
+                'technologies' => $project->getTechnologiesArray(),
+                'category' => $project->getCategory() ? strtolower($project->getCategory()) : '',
                 'image' => $project->getImage(),
                 'demo_url' => $project->getDemoUrl(),
                 'github_url' => $project->getGithubUrl(),
